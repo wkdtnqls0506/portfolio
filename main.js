@@ -11,7 +11,7 @@ document.addEventListener("scroll", () => {
     }
 })
 
-// navbar item을 클릭했을 때 해당 페이지로 스크롤링
+// navbar item을 클릭했을 때 해당 페이지로 스크롤링 -> data-link를 통해 5가지 경우를 하나의 코드에 담아야 하기 때문에 데이터셋 사용
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
     const target = event.target;
@@ -19,6 +19,16 @@ navbarMenu.addEventListener("click", (event) => {
     if (link === null) {
         return;
     }
-    const scrollTo = document.querySelector(link);  // 문자열에는 scrollIntoView라는 함수가 존재하지 않으므로 querySelector를 사용하여 DOM 요소를 받아옴 
-    scrollTo.scrollIntoView({behavior : "smooth"});
+    scrollIntoViews(link);
 })
+
+// "contact me" 버튼을 클릭하였을 때, contact 페이지로 스크롤링 -> contact button의 경우 한가지 경우만 존재하기 때문에 직접 #contact를 사용해도 무관
+const homeContactBtn = document.querySelector(".home__contact");
+homeContactBtn.addEventListener("click", () => {
+    scrollIntoViews('#contact');
+})
+
+function scrollIntoViews(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior : "smooth"});
+}
