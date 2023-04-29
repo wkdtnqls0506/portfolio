@@ -35,6 +35,20 @@ document.addEventListener("scroll", () => {
     home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+// 스크롤하여 내려올 때 arrow up button이 생성되어 버튼 클릭시 맨 위로 올라가도록 설정
+const arrowUp = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add("visible");
+    } else {
+        arrowUp.classList.remove("visible");
+    }
+})
+
+arrowUp.addEventListener("click", () => {
+    scrollIntoViews('#home');
+})
+
 
 
 

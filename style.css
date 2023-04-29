@@ -478,6 +478,27 @@ button {
     transform: scale(1.2);
 }
 
+/* Arrow up */
+.arrow-up {
+    position: fixed;
+    bottom : 50px;
+    right : 50px;
+    width : 70px;
+    height : 70px;
+    font-size: 50px;
+    color : var(--color-white);
+    background-color: var(--color-pink);
+    border-radius: 50%;
+    opacity: 0;  /* display : none은 애니메이션 적용이 안되기 때문에 opacity 사용 */
+    pointer-events: none;  /* 보이지 않을 땐 클릭이 안되도록 설정 */
+    transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* For below 768px screen width */
 @media screen and (max-width : 768px) {
     .navbar__toggle-btn{
