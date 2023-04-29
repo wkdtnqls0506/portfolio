@@ -1,251 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subangbang's Portfolio</title>
-    <meta name="description" content="Portfolio">
-    <meta name="author" content="SuBin">
-    <script src="https://kit.fontawesome.com/4ee7f6a3e5.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Sunflower:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="imgs/watermelon.png">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio" />
+    <meta name="author" content="SuBin" />
+    <script
+      src="https://kit.fontawesome.com/4ee7f6a3e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Sunflower:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="imgs/watermelon.png" />
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <nav id="navbar">
-        <div class="navbar__logo">
-            <img src="./imgs/watermelon.png" width="25px">
-            <a href="#">SuBin</a>
-        </div>
-        <div class="navbar__menu">
-            <ul class="navbar__menu">
-                <li class="navbar__menu__item active">Home</li>
-                <li class="navbar__menu__item">About</li>
-                <li class="navbar__menu__item">Skills</li>
-                <li class="navbar__menu__item">My work</li>
-                <li class="navbar__menu__item">Testimonials</li>
-                <li class="navbar__menu__item">Contact</li>
-            </ul>
-        </div>
+      <div class="navbar__logo">
+        <img src="./imgs/watermelon.png" width="25px" />
+        <a href="#">SuBin</a>
+      </div>
+      <div class="navbar__menu">
+        <ul class="navbar__menu">
+          <li class="navbar__menu__item active" data-link="#home">Home</li>
+          <li class="navbar__menu__item" data-link="#about">About</li>
+          <li class="navbar__menu__item" data-link="#skills">Skills</li>
+          <li class="navbar__menu__item" data-link="#work">My work</li>
+          <li class="navbar__menu__item" data-link="#testimonials">Testimonials</li>
+          <li class="navbar__menu__item" data-link="#contact">Contact</li>
+        </ul>
+      </div>
 
-        <!-- Toggle Button -->
-        <button class="navbar__toggle-btn">
-            toggle
-        </button>
+      <!-- Toggle Button -->
+      <button class="navbar__toggle-btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </nav>
 
     <!-- Home -->
     <section id="home">
-        <img class="home__avatar" src="./imgs/나.png">
-        <h1 class="home__title">
-            Hello, <br>I'm Subang.
-        </h1>
-        <h3 class="home__description">
-            I'm a sprout developer who dreams of becoming a front engineer.
-        </h3>
-        <button class="home__contact">
-            Contact Me
-        </button>
+      <img class="home__avatar" src="./imgs/나.png" />
+      <h1 class="home__title">Hello, <br />I'm Subang.</h1>
+      <h3 class="home__description">
+        I'm a sprout developer who dreams of becoming a front engineer.
+      </h3>
+      <button class="home__contact">Contact Me</button>
     </section>
 
     <!-- About -->
     <section id="about" class="section section__container">
-        <h1>About me</h1>  <!-- 페이지에서 공통적으로 쓰이므로 따로 class 지정은 하지 않음 !-->
-        <p>
-            대학교 4학년 전 휴학상태이며, <br>프론트엔드 개발자가 되기 위해 끊임없이 공부를 하고 있습니다!
-        </p>
-        <div class="about__majors">  <!-- 3가지를 묶을 수 있는 div -->
-            <div class="major">
-                <div class="major__icon">
-                    <i class="fa-brands fa-html5"></i>
-                </div>
-                <h3 class="major__title">HTML</h3>
-                <div class="major__description">HTML</div>
-            </div>
-            <div class="major">
-                <div class="major__icon">
-                    <i class="fa-brands fa-css3-alt"></i>
-                </div>
-                <h3 class="major__title">CSS</h3>
-                <div class="major__description">CSS</div>
-            </div>
-            <div class="major">
-                <div class="major__icon">
-                    <i class="fa-brands fa-square-js"></i>
-                </div>
-                <h3 class="major__title">JavaScript</h3>
-                <div class="major__description">JavaScript</div>
-            </div>
+      <h1>About me</h1>
+      <!-- 페이지에서 공통적으로 쓰이므로 따로 class 지정은 하지 않음 !-->
+      <p>
+        대학교 4학년 전 휴학상태이며, <br />프론트엔드 개발자가 되기 위해
+        끊임없이 공부를 하고 있습니다!
+      </p>
+      <div class="about__majors">
+        <!-- 3가지를 묶을 수 있는 div -->
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <h3 class="major__title">HTML</h3>
+          <div class="major__description">HTML</div>
         </div>
-        <div class="about__jobs">
-            <div class="job">
-                <img src="./imgs/Signiture1_01.png" class="job__logo">
-                <div class="job__description">
-                    <p class="job__name">상명대학교</p>
-                    <p class="job__period">대학교 4학년 전 휴학상태</p>
-                </div>
-            </div>
-            <div class="job">
-                <img src="./imgs/Signiture1_01.png" class="job__logo">
-                <div class="job__description">
-                    <p class="job__name">상명대학교</p>
-                    <p class="job__period">대학교 4학년 전 휴학상태</p>
-                </div>
-            </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-css3-alt"></i>
+          </div>
+          <h3 class="major__title">CSS</h3>
+          <div class="major__description">CSS</div>
         </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-square-js"></i>
+          </div>
+          <h3 class="major__title">JavaScript</h3>
+          <div class="major__description">JavaScript</div>
+        </div>
+      </div>
+      <div class="about__jobs">
+        <div class="job">
+          <img src="./imgs/Signiture1_01.png" class="job__logo" />
+          <div class="job__description">
+            <p class="job__name">상명대학교</p>
+            <p class="job__period">대학교 4학년 전 휴학상태</p>
+          </div>
+        </div>
+        <div class="job">
+          <img src="./imgs/Signiture1_01.png" class="job__logo" />
+          <div class="job__description">
+            <p class="job__name">상명대학교</p>
+            <p class="job__period">대학교 4학년 전 휴학상태</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills -->
     <section id="skills" class="section">
-        <div class="section__container">
-            <h1>Skills</h1>
-            <h3>Skills & Attributes</h3>
-            <p>
-                소프트웨어 라이프사이클의 모든 단계에 대한 경험, 새로운 기술을 배우는 열정, 팀 환경 내에서 독립적으로 일할 수 있는 능력. 계획을 세우고 시간을 정하며 엄격한 시간 압박 속에서 필요할 때 신속하게 작업할 수 있습니다.
-            </p>
-            <div class="skillset">
-                <div class="skillset__left">
-                    <h3 class="skillset_title">Skills</h3>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>HTML</span>
-                            <span>99%</span>
-                        </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:99%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>CSS</span>
-                            <span>89%</span>
-                        </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:89%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>JavaScript</span>
-                            <span>19%</span>
-                        </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:19%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skillset__right">
-                    <div class="tools">
-                        <h3 class="skillset_title">Tools</h3>
-                        <ul class="tools__list">
-                            <li><span>Visual Studio Code</span></li>
-                            <li><span>Visual Studio Code</span></li>
-                            <li><span>Visual Studio Code</span></li>
-                            <li><span>Visual Studio Code</span></li>
-                            <li><span>Visual Studio Code</span></li>
-                        </ul>
-                    </div>
-                    <div class="etc">
-                        <h3 class="skillset_title">Etc</h3>
-                        <ul class="etc__list">
-                            <li><span>Git</span></li>
-                            <li><span>Scrum</span></li>
-                            <li><span>Math</span></li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="section__container">
+        <h1>Skills</h1>
+        <h3>Skills & Attributes</h3>
+        <p>
+          소프트웨어 라이프사이클의 모든 단계에 대한 경험, 새로운 기술을 배우는
+          열정, 팀 환경 내에서 독립적으로 일할 수 있는 능력. 계획을 세우고
+          시간을 정하며 엄격한 시간 압박 속에서 필요할 때 신속하게 작업할 수
+          있습니다.
+        </p>
+        <div class="skillset">
+          <div class="skillset__left">
+            <h3 class="skillset_title">Skills</h3>
+            <div class="skill">
+              <div class="skill_description">
+                <span>HTML</span>
+                <span>99%</span>
+              </div>
+              <div class="skill_bar">
+                <div class="skill_value" style="width: 99%"></div>
+              </div>
             </div>
+            <div class="skill">
+              <div class="skill_description">
+                <span>CSS</span>
+                <span>89%</span>
+              </div>
+              <div class="skill_bar">
+                <div class="skill_value" style="width: 89%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill_description">
+                <span>JavaScript</span>
+                <span>19%</span>
+              </div>
+              <div class="skill_bar">
+                <div class="skill_value" style="width: 19%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skillset__right">
+            <div class="tools">
+              <h3 class="skillset_title">Tools</h3>
+              <ul class="tools__list">
+                <li><span>Visual Studio Code</span></li>
+                <li><span>Visual Studio Code</span></li>
+                <li><span>Visual Studio Code</span></li>
+                <li><span>Visual Studio Code</span></li>
+                <li><span>Visual Studio Code</span></li>
+              </ul>
+            </div>
+            <div class="etc">
+              <h3 class="skillset_title">Etc</h3>
+              <ul class="etc__list">
+                <li><span>Git</span></li>
+                <li><span>Scrum</span></li>
+                <li><span>Math</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!--Work -->
     <section id="work" class="section">
-        <div class="section__container">
-            <h1>My work</h1>
-            <h3>Projects</h3>
-            <div class="work__categories">
-                <button class="category__btn active">All<span class="category__count">8</span></button>
-                <button class="category__btn">Front-end<span class="category__count">3</span></button>
-                <button class="category__btn">Back-end<span class="category__count">3</span></button>
-                <button class="category__btn">Mobile<span class="category__count">2</span></button>
-            </div>
-            <div class="work__projects">
-                <a href="https://github.com/wkdtnqls0506/Todo-List" class="project" alt="Todo-List" target="_blank">
-                    <img src="./imgs/todolist.png" class="project__img">
-                    <div class="project__description">
-                        <h3>Todo-List</h3>
-                        <span>Make Todo-List with HTML, CSS and JavaScript</span>
-                    </div>
-                </a>
-                <a href="https://github.com/wkdtnqls0506/Todo-List" class="project" alt="Todo-List" target="_blank">
-                    <img src="./imgs/todolist.png" class="project__img">
-                    <div class="project__description">
-                        <h3>Todo-List</h3>
-                        <span>Make Todo-List with HTML, CSS and JavaScript</span>
-                    </div>
-                </a>
-                <a href="https://github.com/wkdtnqls0506/Todo-List" class="project" alt="Todo-List" target="_blank">
-                    <img src="./imgs/todolist.png" class="project__img">
-                    <div class="project__description">
-                        <h3>Todo-List</h3>
-                        <span>Make Todo-List with HTML, CSS and JavaScript</span>
-                    </div>
-                </a>
-                <a href="https://github.com/wkdtnqls0506/Todo-List" class="project" alt="Todo-List" target="_blank">
-                    <img src="./imgs/todolist.png" class="project__img">
-                    <div class="project__description">
-                        <h3>Todo-List</h3>
-                        <span>Make Todo-List with HTML, CSS and JavaScript</span>
-                    </div>
-                </a>
-            </div>
+      <div class="section__container">
+        <h1>My work</h1>
+        <h3>Projects</h3>
+        <div class="work__categories">
+          <button class="category__btn active">
+            All<span class="category__count">8</span>
+          </button>
+          <button class="category__btn">
+            Front-end<span class="category__count">3</span>
+          </button>
+          <button class="category__btn">
+            Back-end<span class="category__count">3</span>
+          </button>
+          <button class="category__btn">
+            Mobile<span class="category__count">2</span>
+          </button>
         </div>
+        <div class="work__projects">
+          <a
+            href="https://github.com/wkdtnqls0506/Todo-List"
+            class="project"
+            alt="Todo-List"
+            target="_blank"
+          >
+            <img src="./imgs/todolist.png" class="project__img" />
+            <div class="project__description">
+              <h3>Todo-List</h3>
+              <span>Make Todo-List with HTML, CSS and JavaScript</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/wkdtnqls0506/Todo-List"
+            class="project"
+            alt="Todo-List"
+            target="_blank"
+          >
+            <img src="./imgs/todolist.png" class="project__img" />
+            <div class="project__description">
+              <h3>Todo-List</h3>
+              <span>Make Todo-List with HTML, CSS and JavaScript</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/wkdtnqls0506/Todo-List"
+            class="project"
+            alt="Todo-List"
+            target="_blank"
+          >
+            <img src="./imgs/todolist.png" class="project__img" />
+            <div class="project__description">
+              <h3>Todo-List</h3>
+              <span>Make Todo-List with HTML, CSS and JavaScript</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/wkdtnqls0506/Todo-List"
+            class="project"
+            alt="Todo-List"
+            target="_blank"
+          >
+            <img src="./imgs/todolist.png" class="project__img" />
+            <div class="project__description">
+              <h3>Todo-List</h3>
+              <span>Make Todo-List with HTML, CSS and JavaScript</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials -->
     <section id="testimonials" class="section">
-        <div class="section__container">
-            <h1>Testimonials</h1>
-            <h3>See What they say about me</h3>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <img src="./imgs/icons8-게스트-여성-100.png" class="testimonial__avatar">
-                    <div class="testimonial__speech-bubble">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra sem. Nulla ut augue nisl. Vivamus vitae congue neque. Integer feugiat, justo ac scelerisque sodales, urna nisl mattis elit, sit amet feugiat justo arcu a ex. Morbi neque odio, euismod in purus a, bibendum commodo nibh. Suspendisse molestie, turpis non vehicula condimentum, turpis massa sollicitudin nulla, vel efficitur augue odio eget orci. Etiam efficitur, ligula nec vehicula fermentum, quam urna ultrices mauris, vel hendrerit tellus mi a metus. Phasellus aliquam pharetra suscipit. Vestibulum ornare lectus facilisis finibus aliquet. Praesent nulla lacus, gravida sit amet lacinia vitae, mollis et turpis. Quisque malesuada posuere mauris, eu porta purus elementum sit amet.</p>
-                        <p class="name"><a href="#">Ellie</a> / Samsung</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial__speech-bubble">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra sem. Nulla ut augue nisl. Vivamus vitae congue neque. Integer feugiat, justo ac scelerisque sodales, urna nisl mattis elit, sit amet feugiat justo arcu a ex. Morbi neque odio, euismod in purus a, bibendum commodo nibh. Suspendisse molestie, turpis non vehicula condimentum, turpis massa sollicitudin nulla, vel efficitur augue odio eget orci. Etiam efficitur, ligula nec vehicula fermentum, quam urna ultrices mauris, vel hendrerit tellus mi a metus. Phasellus aliquam pharetra suscipit. Vestibulum ornare lectus facilisis finibus aliquet. Praesent nulla lacus, gravida sit amet lacinia vitae, mollis et turpis. Quisque malesuada posuere mauris, eu porta purus elementum sit amet.</p>
-                        <p class="name"><a href="#">Ellie</a> / Samsung</p>
-                    </div>
-                    <img src="./imgs/icons8-게스트-남성-100.png" class="testimonial__avatar">
-                </div>
+      <div class="section__container">
+        <h1>Testimonials</h1>
+        <h3>See What they say about me</h3>
+        <div class="testimonials">
+          <div class="testimonial">
+            <img
+              src="./imgs/icons8-게스트-여성-100.png"
+              class="testimonial__avatar"
+            />
+            <div class="testimonial__speech-bubble">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse eget viverra sem. Nulla ut augue nisl. Vivamus vitae
+                congue neque. Integer feugiat, justo ac scelerisque sodales,
+                urna nisl mattis elit, sit amet feugiat justo arcu a ex. Morbi
+                neque odio, euismod in purus a, bibendum commodo nibh.
+                Suspendisse molestie, turpis non vehicula condimentum, turpis
+                massa sollicitudin nulla, vel efficitur augue odio eget orci.
+                Etiam efficitur, ligula nec vehicula fermentum, quam urna
+                ultrices mauris, vel hendrerit tellus mi a metus. Phasellus
+                aliquam pharetra suscipit. Vestibulum ornare lectus facilisis
+                finibus aliquet. Praesent nulla lacus, gravida sit amet lacinia
+                vitae, mollis et turpis. Quisque malesuada posuere mauris, eu
+                porta purus elementum sit amet.
+              </p>
+              <p class="name"><a href="#">Ellie</a> / Samsung</p>
             </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial__speech-bubble">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse eget viverra sem. Nulla ut augue nisl. Vivamus vitae
+                congue neque. Integer feugiat, justo ac scelerisque sodales,
+                urna nisl mattis elit, sit amet feugiat justo arcu a ex. Morbi
+                neque odio, euismod in purus a, bibendum commodo nibh.
+                Suspendisse molestie, turpis non vehicula condimentum, turpis
+                massa sollicitudin nulla, vel efficitur augue odio eget orci.
+                Etiam efficitur, ligula nec vehicula fermentum, quam urna
+                ultrices mauris, vel hendrerit tellus mi a metus. Phasellus
+                aliquam pharetra suscipit. Vestibulum ornare lectus facilisis
+                finibus aliquet. Praesent nulla lacus, gravida sit amet lacinia
+                vitae, mollis et turpis. Quisque malesuada posuere mauris, eu
+                porta purus elementum sit amet.
+              </p>
+              <p class="name"><a href="#">Ellie</a> / Samsung</p>
+            </div>
+            <img
+              src="./imgs/icons8-게스트-남성-100.png"
+              class="testimonial__avatar"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section">
-        <h1 class="contact__title">Let's talk</h1>
-        <h3 class="contact__email">wkdtnqls0506@naver.com</h3>
-        <div class="contact__links">
-            <a href="https://github.com/wkdtnqls0506" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-                <i class="fa-brands fa-square-instagram"></i>
-            </a>
-        </div>
-        <p class="contact__rights">
-            2023 JangSuBin - All rights reserved
-        </p>
+      <h1 class="contact__title">Let's talk</h1>
+      <h3 class="contact__email">wkdtnqls0506@naver.com</h3>
+      <div class="contact__links">
+        <a href="https://github.com/wkdtnqls0506" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <i class="fa-brands fa-square-instagram"></i>
+        </a>
+      </div>
+      <p class="contact__rights">2023 JangSuBin - All rights reserved</p>
     </section>
-</body>
+  </body>
 </html>
