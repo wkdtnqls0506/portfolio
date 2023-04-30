@@ -49,6 +49,29 @@ arrowUp.addEventListener("click", () => {
     scrollIntoViews('#home');
 })
 
+// project 카테고리를 클릭하였을 때 해당 이미지만 띄우도록 필터링
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');  // [object NodeList]
+workBtnContainer.addEventListener('click', (e) => {
+    // <span> 태그로 감싸져 있는 것을 data-filter가 선언되어 있지 않으므로 부모노드를 찾아 반환
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter === null) {
+        return;
+    }
+    setTimeout(() => {
+        projectContainer.classList.remove('anim-out');
+    }, 300);
+    projectContainer.classList.add('anim-out');
+    projects.forEach((project) => {
+        console.log(project.dataset.type);
+        if (filter === '*' || filter === project.dataset.type) {
+            project.classList.remove('invisible');
+        } else {
+            project.classList.add('invisible');
+        }
+    });
+});
 
 
 
