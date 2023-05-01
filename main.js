@@ -11,6 +11,8 @@ document.addEventListener("scroll", () => {
     }
 });
 
+
+
 // navbar item을 클릭했을 때 해당 페이지로 스크롤링 -> data-link를 통해 5가지 경우를 하나의 코드에 담아야 하기 때문에 데이터셋 사용
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
@@ -19,8 +21,15 @@ navbarMenu.addEventListener("click", (event) => {
     if (link === null) {
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollIntoViews(link);
 });
+
+// 반응형 : 토글 버튼 클릭시 navbar가 보이도록 설정
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+})
 
 // "contact me" 버튼을 클릭하였을 때, contact 페이지로 스크롤링 -> contact button의 경우 한가지 경우만 존재하기 때문에 직접 #contact를 사용해도 무관
 const homeContactBtn = document.querySelector(".home__contact");
@@ -60,10 +69,12 @@ workBtnContainer.addEventListener('click', (e) => {
         return;
     }
 
-    // navbar & project category 선택시 active 되도록 설정
+    // project category 선택시 active 되도록 설정
     const active = document.querySelector(".category__btn.selected");
     active.classList.remove('selected');
     const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    console.log(e.target);
+    
     target.classList.add('selected');
 
     setTimeout(() => {
@@ -79,6 +90,7 @@ workBtnContainer.addEventListener('click', (e) => {
         }
     });
 });
+
 
 
 
