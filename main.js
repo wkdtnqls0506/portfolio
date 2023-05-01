@@ -56,9 +56,16 @@ const projects = document.querySelectorAll('.project');  // [object NodeList]
 workBtnContainer.addEventListener('click', (e) => {
     // <span> 태그로 감싸져 있는 것을 data-filter가 선언되어 있지 않으므로 부모노드를 찾아 반환
     const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-    if (filter === null) {
+    if (filter == null) {
         return;
     }
+
+    // navbar & project category 선택시 active 되도록 설정
+    const active = document.querySelector(".category__btn.selected");
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
     setTimeout(() => {
         projectContainer.classList.remove('anim-out');
     }, 300);
@@ -72,7 +79,6 @@ workBtnContainer.addEventListener('click', (e) => {
         }
     });
 });
-
 
 
 
