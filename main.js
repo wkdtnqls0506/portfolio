@@ -23,6 +23,7 @@ navbarMenu.addEventListener("click", (event) => {
     }
     navbarMenu.classList.remove('open');
     scrollIntoViews(link);
+    selectNavItem(target);
 });
 
 // 반응형 : 토글 버튼 클릭시 navbar가 보이도록 설정
@@ -91,24 +92,57 @@ workBtnContainer.addEventListener('click', (e) => {
     });
 });
 
+// 1. 모든 섹션 요소들과 메뉴 아이템들을 가지고 온다
+// 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
+// 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
 
+const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => 
+    document.querySelector(`[data-link="${id}"]`)
+);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+function selectNavItem(selected) {
+    selectedNavItem.classList.remove('active');
+    selectedNavItem = selected;
+    selectedNavItem.classList.add('active');
+}
 
 function scrollIntoViews(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior : "smooth"});
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
+
+const observerOptions = {
+    root : null,
+    rootMargin: '0px',
+    threshold : 0.3,
+};
+
+const observerCallback = (entries, observer) => {  // 해당하는 섹션을 찾아서 navbar 메뉴를 활성화
+    entries.forEach(entry => {
+        if(!entry.isIntersecting && entry.intersectionRatio > 0) {  // 나가는 경우
+            const index = sectionIds.indexOf(`#${entry.target.id}`);
+            if(entry.boundingClientRect.y < 0) {  // 스크롤링이 아래로 내려가 페이지가 올라옴
+                selectedNavIndex = index + 1;
+            } else {
+                selectedNavIndex = index - 1;
+            }
+        }
+    })
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));  // 관찰
+
+window.addEventListener('wheel', () => {
+    if (window.scrollY === 0) {  // 화면이 맨 위로 스크롤 되었을 때
+        selectedNavIndex = 0;
+    } else if (Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight) {  // 화면이 맨 아래로 스크롤 되었을 때
+        selectedNavIndex = navItems.length - 1;
+    }
+    selectNavItem(navItems[selectedNavIndex]);
+});
