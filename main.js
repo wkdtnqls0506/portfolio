@@ -11,8 +11,6 @@ document.addEventListener("scroll", () => {
     }
 });
 
-
-
 // navbar item을 클릭했을 때 해당 페이지로 스크롤링 -> data-link를 통해 5가지 경우를 하나의 코드에 담아야 하기 때문에 데이터셋 사용
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
