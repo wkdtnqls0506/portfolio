@@ -430,6 +430,8 @@ button {
 /* Testimonial */
 #testimonials {
     background-color: var(--color-light-white);
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonials {
@@ -459,6 +461,9 @@ button {
     background-color: var(--color-white);
     padding : 18px;
     border-radius: var(--size-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .testimonial__speech-bubble p {
